@@ -13,7 +13,6 @@ In summary, this tool is an efficient and accurate solution to help secure your 
 ## Help
 
 ```
-user $> supermantra -h
 Usage of supermantra:
   -c string
         cookies
