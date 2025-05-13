@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <h1 align="center">「👁️」 About Super Mantra</h1>
+=======
+<h1 align="center">「👁️🔑」 About Super Mantra</h1>
+>>>>>>> b182841 (Switch to Super Mantra)
 
 <p align="center"><img src="assets/banner.png"></p>
 
@@ -46,4 +50,8 @@ docker run -i --rm mantra <options>
 ### Coded by Brosck, UPGRADE by Rand0x
 
 I saw this tool and liked it. It needed some upgrades, like a proxy, rate limiting, and so on. So, I added these features and called it Super Mantra.
+<<<<<<< HEAD
 Fork of https://github.com/brosck/mantra
+=======
+Fork of Github-Repo: https://github.com/brosck/mantra
+>>>>>>> b182841 (Switch to Super Mantra)
