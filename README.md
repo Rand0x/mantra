@@ -64,7 +64,7 @@ docker run -i --rm supermantra <options>
 # insert your URLs
 ```
 
-### Coded by Brosck, UPGRADE by Rand0x
+### Coded by Brosck, UPGRADED by Rand0x
 
 I saw this tool and liked it. It needed some upgrades, like a proxy, rate limiting, and so on. So, I added these features and called it Super Mantra.
 Fork of https://github.com/brosck/mantra
