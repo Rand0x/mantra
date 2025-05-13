@@ -13,7 +13,7 @@ In summary, this tool is an efficient and accurate solution to help secure your 
 ## Help
 
 ```
-Usage of supermantra:
+Usage of super-mantra:
   -c string
         cookies
   -d    detailed
@@ -33,8 +33,8 @@ Usage of supermantra:
 ## Usage
 
 ```
-cat js-urls.txt | supermantra
-echo "http://<js-url>" | supermantra
+cat js-urls.txt | super-mantra
+echo "http://<js-url>" | super-mantra
 ```
 
 ## Install
@@ -51,16 +51,16 @@ From source code:
 git clone https://github.com/Rand0x/super-mantra
 cd super-mantra
 make
-./build/supermantra-amd64-linux -h
+./build/super-mantra-amd64-linux -h
 ```
 
 ## Usage Docker
 
 ```
-docker build -t supermantra .
-echo <URL> | docker run -i --rm supermantra <options>
+docker build -t super-mantra .
+echo <URL> | docker run -i --rm super-mantra <options>
 # or
-docker run -i --rm supermantra <options>
+docker run -i --rm super-mantra <options>
 # insert your URLs
 ```
 
