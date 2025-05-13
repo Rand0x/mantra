@@ -1,4 +1,4 @@
-<h1 align="center">「🔑」 About Mantra</h1>
+<h1 align="center">「👁️」 About Super Mantra</h1>
 
 <p align="center"><img src="assets/banner.png"></p>
 
@@ -42,3 +42,8 @@ echo <URL> | docker run -i --rm mantra <options>
 docker run -i --rm mantra <options>
 # insert your URLs
 ```
+
+### Coded by Brosck, UPGRADE by Rand0x
+
+I saw this tool and liked it. It needed some upgrades, like a proxy, rate limiting, and so on. So, I added these features and called it Super Mantra.
+Fork of https://github.com/brosck/mantra
