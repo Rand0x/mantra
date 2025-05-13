@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<h1 align="center">「👁️」 About Super Mantra</h1>
-=======
 <h1 align="center">「👁️🔑」 About Super Mantra</h1>
->>>>>>> b182841 (Switch to Super Mantra)
 
 <p align="center"><img src="assets/banner.png"></p>
 
@@ -15,43 +11,61 @@ By using this tool, developers can quickly identify if their API keys are leakin
 In summary, this tool is an efficient and accurate solution to help secure your API keys and prevent sensitive information leaks.
 
 ## Help
-![](assets/help.png)
+
+```
+user $> supermantra -h
+Usage of supermantra:
+  -c string
+        cookies
+  -d    detailed
+  -ep string
+        extra, custom (regexp) pattern
+  -p string
+        proxy, e.g. http://127.0.0.1:8080 or socks5://192.168.0.10:1080
+  -r int
+        max requests per second (0 = unlimited)
+  -s    silent
+  -t int
+        thread number (default 50)
+  -ua string
+        User-Agent (default "Super Mantra v4.0")
+```
 
 ## Usage
-![](assets/usage1.png)
+
+```
+cat js-urls.txt | supermantra
+echo "http://<js-url>" | supermantra
+```
 
 ## Install
 
 From go:
 
 ```
-go install github.com/Rand0x/mantra@latest
+go install github.com/Rand0x/super-mantra@latest
 ```
 
 From source code:
 
 ```
-git clone https://github.com/Rand0x/mantra
-cd mantra
+git clone https://github.com/Rand0x/super-mantra
+cd super-mantra
 make
-./build/mantra-amd64-linux -h
+./build/supermantra-amd64-linux -h
 ```
 
 ## Usage Docker
 
 ```
-docker build -t mantra .
-echo <URL> | docker run -i --rm mantra <options>
+docker build -t supermantra .
+echo <URL> | docker run -i --rm supermantra <options>
 # or
-docker run -i --rm mantra <options>
+docker run -i --rm supermantra <options>
 # insert your URLs
 ```
 
 ### Coded by Brosck, UPGRADE by Rand0x
 
 I saw this tool and liked it. It needed some upgrades, like a proxy, rate limiting, and so on. So, I added these features and called it Super Mantra.
-<<<<<<< HEAD
 Fork of https://github.com/brosck/mantra
-=======
-Fork of Github-Repo: https://github.com/brosck/mantra
->>>>>>> b182841 (Switch to Super Mantra)

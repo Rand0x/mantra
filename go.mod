@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-module github.com/Rand0x/mantra
-=======
 module github.com/Rand0x/super-mantra
->>>>>>> b182841 (Switch to Super Mantra)
 
 go 1.24
 
