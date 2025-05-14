@@ -36,6 +36,7 @@ var (
 	httpClient    *http.Client
 	xtraRegComp   *regexp.Regexp
 	processedURLs = make(map[string]bool)
+	urlMux        sync.Mutex
 )
 
 func req(rawURL string) {
@@ -45,7 +46,9 @@ func req(rawURL string) {
 		return
 	}
 
+	urlMux.Lock()
 	if processedURLs[rawURL] {
+		urlMux.Unlock()
 		if *detailed {
 			fmt.Printf("\033[33m[*]\033[0m Skip, because of duplicate: %s\n", rawURL)
 		}
@@ -53,14 +56,18 @@ func req(rawURL string) {
 	}
 
 	processedURLs[rawURL] = true
+	urlMux.Unlock()
 
 	request, err := http.NewRequest(http.MethodGet, u.String(), nil)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "\033[31m[-]\033[0m cannot build request for %s: %v\n", rawURL, err)
 		return
 	}
+
+	if *rc != "" {
+		request.Header.Set("Cookie", *rc)
+	}
 	request.Header.Set("User-Agent", *ua)
-	request.Header.Set("Cookie", *rc)
 
 	if *detailed {
 		fmt.Printf("\033[33m[*]\033[0m Processing %s\n", rawURL)
@@ -169,17 +176,17 @@ func init() {
 			}
 			return http.ProxyFromEnvironment(r)
 		},
+		DisableCompression: true,
 	}
 
-	if strings.HasPrefix(*proxyAddr, "socks5://") {
+	if *proxyAddr != "" && strings.HasPrefix(*proxyAddr, "socks5://") {
 		dialer, err := proxy.SOCKS5("tcp", (*proxyAddr)[len("socks5://"):], nil, proxy.Direct)
 		if err != nil {
 			log.Fatalf("failed to create SOCKS5 proxy dialer: %v", err)
 		}
-
 		tr.Dial = dialer.Dial
-
 	}
+
 	httpClient = &http.Client{Transport: tr, Timeout: 15 * time.Second}
 
 }
